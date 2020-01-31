@@ -3,7 +3,7 @@
 <@c.page>
     User editor
     <form action="/user" method="post">
-        <input type="text" value="${user.userName}" name="userName">
+        <input type="text" name="userName" value="${user.userName}">
         <#list roles as role>
             <div>
                 <label><input type="checkbox" name="${role}" ${user.roles?seq_contains(role)?string("checked", "")}>${role}</label>
@@ -12,5 +12,10 @@
         <input type="hidden" value="${user.id}" name="userId">
         <input type="hidden" value="${_csrf.token}" name="_csrf">
         <button type="submit">Save</button>
+
+        <div>
+            <a href="/user">Return to user list</a>
+        </div>
+
     </form>
 </@c.page>

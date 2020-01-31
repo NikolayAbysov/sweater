@@ -4,6 +4,7 @@ import com.example.sweater.domain.Role;
 import com.example.sweater.domain.User;
 import com.example.sweater.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -16,6 +17,8 @@ import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/user") //Маппинг на уровне класса. Нужно, чтобы не подписывать каждому методу, что у него на пути /user
+@PreAuthorize("hasAuthority('ADMIN')") //Аннотация будет проверять перед выполнением каждого метода наличие у пользователя прав. Чтобы заработало нужно добавить
+//в вебсекьюрити конфиг аннотацию @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class UserController {
     @Autowired
     private UserRepository userRepository;
@@ -33,12 +36,12 @@ public class UserController {
         return "userEdit";
     }
 
-    @PostMapping("{user}")
+    @PostMapping
     public String userSave(
             @RequestParam String userName,
             @RequestParam Map<String, String> form,
-            @RequestParam("userId") User user){
-
+            @RequestParam("userId") User user
+    ) {
         user.setUserName(userName);
 
         Set<String> roles = Arrays.stream(Role.values())
@@ -47,8 +50,8 @@ public class UserController {
 
         user.getRoles().clear();
 
-        for (String key : form.keySet()){
-            if(roles.contains(key)){
+        for (String key : form.keySet()) {
+            if (roles.contains(key)) {
                 user.getRoles().add(Role.valueOf(key));
             }
         }
@@ -57,4 +60,5 @@ public class UserController {
 
         return "redirect:/user";
     }
+
 }

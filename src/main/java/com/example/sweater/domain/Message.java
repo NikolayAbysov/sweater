@@ -9,6 +9,7 @@ public class Message {
     private Integer id;
     private String text;
     private String tag;
+    private String filename;
 
     @ManyToOne(fetch = FetchType.EAGER) //Маппинг хранения значений поля "Автор"
     @JoinColumn(name = "user_id") //Это нужно, чтобы в таблице это поле называлось "user_id" а не автор
@@ -57,5 +58,13 @@ public class Message {
 
     public void setAuthor(User author) {
         this.author = author;
+    }
+
+    public String getFilename() {
+        return filename;
+    }
+
+    public void setFilename(String filename) {
+        this.filename = filename;
     }
 }

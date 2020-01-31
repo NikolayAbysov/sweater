@@ -20,4 +20,7 @@
             </#list>
         </tbody>
     </table>
+    <div>
+        <a href="/main">Return to main page</a>
+    </div>
 </@c.page>

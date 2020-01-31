@@ -1,7 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="702ec695-112f-42b9-a6a6-75ebc42af8bd" name="Default Changelist" comment="" />
+    <list default="true" id="702ec695-112f-42b9-a6a6-75ebc42af8bd" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sweater/config/MvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sweater/config/MvcConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sweater/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sweater/config/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sweater/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sweater/controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sweater/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sweater/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/sweater/domain/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/sweater/domain/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main.ftlh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/registration.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/registration.ftlh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/userEdit.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/userEdit.ftlh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/userList.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/userList.ftlh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sweater/config/MvcConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sweater/config/MvcConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sweater/config/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sweater/config/WebSecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sweater/controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sweater/controller/MainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sweater/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sweater/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/sweater/domain/Message.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/sweater/domain/Message.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/main.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/main.ftlh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/registration.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/registration.ftlh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/userEdit.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/userEdit.ftlh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/userList.ftlh" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/userList.ftlh" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +72,7 @@
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.3448276" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -112,6 +135,9 @@
       <workItem from="1579519061296" duration="2591000" />
       <workItem from="1579677597719" duration="8516000" />
       <workItem from="1579772611708" duration="6323000" />
+      <workItem from="1579852894852" duration="614000" />
+      <workItem from="1580457364309" duration="635000" />
+      <workItem from="1580458967643" duration="8397000" />
     </task>
     <servers />
   </component>
@@ -123,10 +149,36 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/sweater/controller/MainController.java</url>
+          <line>84</line>
+          <properties class="com.example.sweater.controller.MainController" method="image">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/sweater/controller/MainController.java</url>
+          <line>85</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/sweater/controller/MainController.java</url>
+          <line>86</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

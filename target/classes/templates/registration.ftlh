@@ -3,6 +3,6 @@
 <!--Если есть такое поле message мы его показываем. Поле берем из RegistrationСontroller-->
 <@c.page>
 Add new user
-    ${message}
+    ${message?if_exists}
 <@l.login "/registration" />
 </@c.page>
