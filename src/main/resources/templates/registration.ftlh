@@ -2,7 +2,7 @@
 <#import "parts/login.ftlh" as l>
 <!--Если есть такое поле message мы его показываем. Поле берем из RegistrationСontroller-->
 <@c.page>
-Add new user
+    <div class="mb-1">Add new user</div>
     ${message?if_exists}
-<@l.login "/registration" />
+<@l.login "/registration" true/>
 </@c.page>
