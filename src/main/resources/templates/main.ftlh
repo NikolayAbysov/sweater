@@ -37,7 +37,7 @@
                     var d = new Date();
 
                     var datestring = d.getDate()  + "-" + (d.getMonth()+1) + "-" + d.getFullYear() + " " +
-                        d.getHours() + ":" + d.getMinutes();
+                        d.getHours();
 
                     document.getElementById("createDate").value = datestring;
                 </script>
