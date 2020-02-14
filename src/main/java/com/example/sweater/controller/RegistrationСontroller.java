@@ -25,14 +25,14 @@ public class RegistrationСontroller {
 
     @PostMapping("/registration")
     public String addUser(@RequestParam String userName, User user, Map<String, Object> model){
-        User userFroDb = userRepository.findByUserName(user.getUserName());
+        User userFroDb = userRepository.findByUsername(user.getUsername());
 
         if(userFroDb != null){
             model.put("message", "User exists");
             return "registration";
         }
 
-        user.setUserName(userName);
+        user.setUsername(userName);
         user.setActive(true);
         user.setRoles(Collections.singleton(Role.USER));
         userRepository.save(user);

@@ -1,36 +1,53 @@
 <#import "parts/common.ftlh" as c>
 
+
 <@c.page>
     <div class="form-row">
         <div class="form-group col-md-6">
-            <form method="get" action="/main" form class="form-inline">
-                <input type="text" name="filter" class="form-control" value="${filter?if_exists}" placeholder="Search by tag">
+            <form method="get" action="/main" class="form-inline">
+                <input type="text" name="filter" class="form-control" value="${filter?ifExists}" placeholder="Search by tag">
                 <button type="submit" class="btn btn-primary ml-2">Search</button>
             </form>
         </div>
     </div>
 
     <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-        Add new message
+        Add new Message
     </a>
-
     <div class="collapse" id="collapseExample">
         <div class="form-group mt-3">
-            <form method="post" enctype="multipart/form-data" class="collapse" id="collapseExample">
+            <form method="post" enctype="multipart/form-data">
                 <div class="form-group">
-                    <input class="form-control" type="text" name="text" placeholder="Type your message" />
+                    <input type="text" class="form-control" name="text" placeholder="Type your message" />
                 </div>
                 <div class="form-group">
-                    <input class="form-control" type="text" name="tag" placeholder="Tag">
+                    <input type="text" class="form-control" name="tag" placeholder="Tag">
                 </div>
                 <div class="form-group">
                     <div class="custom-file">
-                        <input class="form-control" type="file" name="file" id="customFile">
+                        <input type="file" name="file" id="customFile">
                         <label class="custom-file-label" for="customFile">Choose file</label>
                     </div>
                 </div>
-                <input class="form-control" type="hidden" name="_csrf" value="${_csrf.token}" />
-                <button class="btn btn-primary" type="submit">Add</button>
+                <div class="form-group">
+                    <input id="createDate" type="text" class="form-control" name="createDate">
+                </div>
+
+                <script>
+                    var d = new Date();
+
+                    var datestring = d.getDate()  + "-" + (d.getMonth()+1) + "-" + d.getFullYear() + " " +
+                        d.getHours() + ":" + d.getMinutes();
+
+                    document.getElementById("createDate").value = datestring;
+                </script>
+
+
+
+                <input type="hidden" name="_csrf" value="${_csrf.token}" />
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Добавить</button>
+                </div>
             </form>
         </div>
     </div>
@@ -38,17 +55,22 @@
     <div class="card-columns">
         <#list messages as message>
             <div class="card my-3">
-                <div class="card-img-top">
-                    <#if message.filename??>
-                        <img src="/img/${message.filename}" class="card-img-top">
-                    </#if>
-                </div>
+                <#if message.filename??>
+                    <img src="/img/${message.filename}" class="card-img-top">
+                </#if>
                 <div class="m-2">
-                    <span>${message.text}</span>
+                    <div>
+                        <span>${message.text}</span>
+                    </div>
+                    <div>
+                        ${message.tag}
+                    </div>
                 </div>
-                ${message.tag}
                 <div class="card-footer text-muted">
-                    ${message.authorName}<!--Это закидоны из groovy. Всё методы getSomething могут быть заменены на обращение к полю (даже если оно не существует) с именем something-->
+                    ${message.authorName}
+                </div>
+                <div>
+                    ${message.createDate}
                 </div>
             </div>
         <#else>

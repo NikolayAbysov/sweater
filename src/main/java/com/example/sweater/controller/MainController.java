@@ -1,8 +1,9 @@
 package com.example.sweater.controller;
 
-import com.example.sweater.domain.Message;
 import com.example.sweater.domain.User;
 import com.example.sweater.repository.MessageRepository;
+import com.example.sweater.domain.Message;
+import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -10,16 +11,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import org.apache.commons.io.IOUtils;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.List;
 import java.util.Map;
 import java.util.UUID;
-import java.util.logging.FileHandler;
 
 @Controller
 public class MainController {
@@ -54,8 +52,9 @@ public class MainController {
                        @RequestParam("file") MultipartFile file,
                        @RequestParam String text,
                        @RequestParam String tag,
+                       @RequestParam String createDate,
                        Map<String, Object> model) throws IOException {
-        Message message = new Message(text, tag, user); //Здесь сохраняем данные в БД
+        Message message = new Message(text, tag, user, createDate); //Здесь сохраняем данные в БД
 
         if (file != null && !file.getOriginalFilename().isEmpty()){
 

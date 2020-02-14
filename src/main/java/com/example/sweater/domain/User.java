@@ -3,7 +3,6 @@ package com.example.sweater.domain;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import javax.persistence.Id;
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.Set;
@@ -14,7 +13,7 @@ public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String userName;
+    private String username;
     private String password;
     private boolean active;
 
@@ -23,7 +22,7 @@ public class User implements UserDetails {
     @Enumerated(EnumType.STRING) //Енам (Role) мы хотим хранить в виде строки
     private Set<Role> roles;
 
-    public boolean isAdmin(){
+    public boolean isAdmin() {
         return roles.contains(Role.ADMIN);
     }
 
@@ -35,26 +34,8 @@ public class User implements UserDetails {
         this.id = id;
     }
 
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return getRoles();
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    @Override
     public String getUsername() {
-        return null;
+        return username;
     }
 
     @Override
@@ -75,6 +56,19 @@ public class User implements UserDetails {
     @Override
     public boolean isEnabled() {
         return isActive();
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return getRoles();
+    }
+
+    public String getPassword() {
+        return password;
     }
 
     public void setPassword(String password) {

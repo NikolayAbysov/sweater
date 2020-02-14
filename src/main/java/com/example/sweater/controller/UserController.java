@@ -9,7 +9,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.security.Key;
 import java.util.Arrays;
 import java.util.Map;
 import java.util.Set;
@@ -38,11 +37,11 @@ public class UserController {
 
     @PostMapping
     public String userSave(
-            @RequestParam String userName,
+            @RequestParam String username,
             @RequestParam Map<String, String> form,
             @RequestParam("userId") User user
     ) {
-        user.setUserName(userName);
+        user.setUsername(username);
 
         Set<String> roles = Arrays.stream(Role.values())
                 .map(Role::name)
